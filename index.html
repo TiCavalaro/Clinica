@@ -1,117 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instituto RMF - Reabilitação Maxilofacial</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #121212; color: #F5F5F5; margin: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #e5e5e5; }
         .gold-text { color: #D4AF37; }
         .gold-bg { background-color: #D4AF37; }
         .gold-border { border-color: #D4AF37; }
-        .nav-link:hover { color: #D4AF37; transition: 0.3s; }
-        .btn-whatsapp { background-color: #25D366; color: white; border-radius: 50px; padding: 10px 20px; font-weight: bold; }
-        footer { border-top: 1px solid #333; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .nav-link { transition: all 0.3s ease; position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #D4AF37; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .glass { background: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); }
     </style>
 </head>
 <body>
 
-    <!-- Header / Superior da Página -->
-    <header class="bg-[#000000] py-6 shadow-lg sticky top-0 z-50">
-        <div class="container flex flex-col md:flex-row items-center justify-between">
+    <!-- Header -->
+    <header class="glass py-4 shadow-2xl sticky top-0 z-50 border-b border-white/5">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <div class="flex items-center space-x-4 mb-4 md:mb-0">
-                <!-- Simulação da Logo -->
-                <div class="w-16 h-16 border-2 gold-border rounded-full flex items-center justify-center">
-                    <span class="gold-text font-bold text-2xl">RMF</span>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold gold-text uppercase tracking-widest">Instituto RMF</h1>
-                    <p class="text-xs text-gray-400">Reabilitação Maxilofacial</p>
+                <!-- Logomarca Atualizada -->
+                <img src="Imagens/Logo Visage Clinique.png" alt="Instituto RMF Logo" class="h-16 w-auto object-contain">
+                <div class="border-l border-white/20 pl-4">
+                    <h1 class="text-xl font-bold gold-text uppercase tracking-[0.2em]">Instituto RMF</h1>
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest">Reabilitação Maxilofacial</p>
                 </div>
             </div>
             
             <nav>
-                <ul class="flex space-x-8 font-medium">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#sobre" class="nav-link">Sobre a Empresa</a></li>
-                    <li><a href="#servicos" class="nav-link">Serviços</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                <ul class="flex space-x-8 text-sm font-medium tracking-wide">
+                    <li><a href="#home" class="nav-link hover:text-white">HOME</a></li>
+                    <li><a href="#sobre" class="nav-link hover:text-white">SOBRE</a></li>
+                    <li><a href="#contato" class="nav-link hover:text-white">CONTATO</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="py-24 text-center bg-gradient-to-b from-black to-[#121212]">
-        <div class="container">
-            <h2 class="text-5xl font-bold mb-6">Excelência em <span class="gold-text">Odontologia</span></h2>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-                Transformando sorrisos com tecnologia de ponta e reabilitação maxilofacial especializada sob a coordenação do Dr. Marcio Ferro.
+    <section id="home" class="relative min-h-[80vh] flex items-center justify-center text-center bg-black overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a0a0a]"></div>
+            <!-- Elemento visual de fundo -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#D4AF37] rounded-full blur-[120px] opacity-10"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="serif text-5xl md:text-7xl mb-6 leading-tight">Excelência em <br><span class="gold-text italic">Odontologia Especializada</span></h2>
+            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10 font-light leading-relaxed">
+                Referência em Reabilitação Maxilofacial em Araçatuba. Tecnologia avançada e cuidado humanizado para transformar sua saúde e estética bucal.
             </p>
-            <a href="https://wa.me/5518991091774" class="btn-whatsapp inline-block text-lg">
-                Agendar Consulta via WhatsApp
-            </a>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <a href="https://wa.me/5511983300491" target="_blank" class="gold-bg text-black px-10 py-4 rounded-full font-bold text-sm tracking-widest hover:scale-105 transition transform duration-300">
+                    AGENDAR CONSULTA
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Sobre a Empresa -->
-    <section id="sobre" class="py-20 bg-[#1a1a1a]">
-        <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold gold-text mb-6">Sobre o Instituto RMF</h2>
-                    <p class="text-gray-300 leading-relaxed mb-4">
-                        O Instituto de Reabilitação Maxilofacial (RMF) é referência em tratamentos odontológicos complexos e reabilitação estética e funcional. Sob a liderança do Dr. Marcio Ferro, nossa missão é proporcionar qualidade de vida através da saúde bucal.
-                    </p>
-                    <p class="text-gray-300 leading-relaxed">
-                        Combinamos arte e ciência para entregar resultados que vão além da estética, focando na harmonia facial e no bem-estar integral de nossos pacientes.
-                    </p>
+    <section id="sobre" class="py-24 bg-[#0f0f0f]">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 gold-border"></div>
+                    <img src="Imagens/Logo Visage Clinique.png" alt="Instituto" class="w-full opacity-80 rounded-lg grayscale hover:grayscale-0 transition duration-700">
                 </div>
-                <div class="border-4 gold-border p-2 rounded-lg">
-                    <div class="bg-gray-800 h-64 rounded flex items-center justify-center">
-                        <span class="text-gray-500 italic">[Espaço para Foto da Clínica ou Dr. Marcio Ferro]</span>
+                <div>
+                    <h2 class="serif text-4xl gold-text mb-8 italic">Nossa História</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6 text-lg">
+                        O <strong>Instituto Odontológico Rmf LTDA</strong> foi fundado em 16 de dezembro de 2021 na cidade de Araçatuba, São Paulo. Nossa clínica nasceu com o propósito de elevar o padrão das atividades odontológicas na região.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Com situação cadastral <strong>Ativa</strong> e foco total na excelência, oferecemos soluções completas em reabilitação, unindo ciência e estética sob um rigoroso padrão de qualidade técnica e profissionalismo.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
+                        <div>
+                            <span class="block gold-text font-bold text-2xl serif">3+</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-widest">Anos de Atuação</span>
+                        </div>
+                        <div>
+                            <span class="block gold-text font-bold text-2xl serif">Araçatuba</span>
+                            <span class="text-xs text-gray-500 uppercase tracking-widest">Sede Própria</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Inferior da Página -->
-    <footer class="bg-black py-16 mt-20">
-        <div class="container">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-                <!-- Informações -->
-                <div>
-                    <h3 class="gold-text font-bold text-lg mb-4 uppercase">Informações</h3>
-                    <p class="text-sm text-gray-400 mb-2">CNPJ: 00.000.000/0001-00</p>
-                    <p class="text-sm text-gray-400 mb-2">Dr. Marcio Ferro - CRO: XXXX</p>
-                </div>
-                
-                <!-- Endereço e Contato -->
-                <div>
-                    <h3 class="gold-text font-bold text-lg mb-4 uppercase">Onde Estamos</h3>
-                    <p class="text-sm text-gray-400 mb-2">Endereço Completo: Rua Exemplo, 123 - Centro</p>
-                    <p class="text-sm text-gray-400 mb-2">Cidade - Estado, CEP 00000-000</p>
-                    <p class="text-sm font-bold gold-text mt-4 flex items-center">
-                        <span class="mr-2">📞</span> (18) 99109-1774
+    <!-- Footer -->
+    <footer id="contato" class="bg-black pt-20 pb-10 border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Coluna 1: Marca -->
+                <div class="col-span-1 lg:col-span-1">
+                    <img src="Imagens/Logo Visage Clinique.png" alt="Logo" class="h-12 mb-6 opacity-80">
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Instituto Odontológico Rmf LTDA<br>
+                        CNPJ: 44.608.896/0001-61<br>
+                        Atividade Odontológica (86.30-5-04)
                     </p>
                 </div>
 
-                <!-- Links Jurídicos -->
+                <!-- Coluna 2: Localização -->
                 <div>
-                    <h3 class="gold-text font-bold text-lg mb-4 uppercase">Links Úteis</h3>
-                    <ul class="text-sm text-gray-400 space-y-2">
-                        <li><a href="/politica-privacidade" class="hover:text-white transition">Política de Privacidade e Segurança</a></li>
-                        <li><a href="/termos-uso" class="hover:text-white transition">Termos de Uso</a></li>
+                    <h3 class="text-white font-bold text-sm tracking-widest mb-6 uppercase">Localização</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        Avenida Brasília, 2121<br>
+                        Sala 1119 - Jardim Nova Yorque<br>
+                        Araçatuba - SP | CEP 16018-000
+                    </p>
+                </div>
+
+                <!-- Coluna 3: Contato -->
+                <div>
+                    <h3 class="text-white font-bold text-sm tracking-widest mb-6 uppercase">Contato</h3>
+                    <a href="https://wa.me/5511983300491" class="text-gray-500 hover:gold-text text-sm block mb-2 transition">
+                        WhatsApp: (11) 98330-0491
+                    </a>
+                    <p class="text-gray-500 text-sm">atendimento@institutormf.com.br</p>
+                </div>
+
+                <!-- Coluna 4: Legal -->
+                <div>
+                    <h3 class="text-white font-bold text-sm tracking-widest mb-6 uppercase">Legal</h3>
+                    <ul class="text-gray-500 text-sm space-y-3">
+                        <li><a href="#" class="hover:text-white transition underline decoration-gold-text/30">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition underline decoration-gold-text/30">Termos de Uso</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
-                <p>&copy; 2024 Instituto RMF. Todos os direitos reservados. Desenvolvido com foco em excelência.</p>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[10px] text-gray-600 uppercase tracking-[0.2em]">
+                    &copy; 2026 Instituto RMF. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6 text-[10px] text-gray-600 uppercase tracking-widest">
+                    <span>CRO-SP Responsável: Consultar</span>
+                </div>
             </div>
         </div>
     </footer>
