@@ -398,14 +398,17 @@ header.shrink .nav{padding-top:12px;padding-bottom:12px}
       transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));
     glow.scale.set(7,7,1); glow.position.z=-1.2; root.add(glow);
 
-    /* ---- emblem plane (logo texture) ---- */
+    /* ---- emblem plane (logo texture) — APENAS no desktop ----
+       No celular o emblema atrás do conteúdo atrapalha a leitura, então não é carregado. */
     var emblem = null;
-    new THREE.TextureLoader().load('Imagens/visage-emblem.png', function(tex){
-      tex.minFilter=THREE.LinearFilter; tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
-      var mat=new THREE.MeshBasicMaterial({map:tex,transparent:true,depthWrite:false});
-      emblem=new THREE.Mesh(new THREE.PlaneGeometry(3,3),mat);
-      root.add(emblem);
-    });
+    if(!isMobile){
+      new THREE.TextureLoader().load('Imagens/visage-emblem.png', function(tex){
+        tex.minFilter=THREE.LinearFilter; tex.anisotropy = renderer.capabilities.getMaxAnisotropy();
+        var mat=new THREE.MeshBasicMaterial({map:tex,transparent:true,depthWrite:false});
+        emblem=new THREE.Mesh(new THREE.PlaneGeometry(3,3),mat);
+        root.add(emblem);
+      });
+    }
 
     /* ---- wireframe ring (futuristic) ---- */
     var ringMat=new THREE.MeshBasicMaterial({color:0xc9a227,wireframe:true,transparent:true,opacity:.16});
@@ -481,7 +484,7 @@ header.shrink .nav{padding-top:12px;padding-bottom:12px}
         emblem.position.z = -p*3;
         emblem.material.opacity = emFade;
       }
-      glow.material.opacity = (0.55 + Math.sin(t*0.8)*0.12) * (0.35+emFade*0.65);
+      glow.material.opacity = (0.55 + Math.sin(t*0.8)*0.12) * (0.35+emFade*0.65) * (isMobile?0.4:1);
       glow.position.y = (emblem?emblem.position.y:0);
       glow.scale.setScalar(6.5 + Math.sin(t*0.7)*0.5);
 
